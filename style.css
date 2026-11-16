@@ -961,3 +961,25 @@
           transition-duration: 0.01ms !important;
         }
       }
+
+      .nigam-scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.nigam-scroll-top-btn:hover {
+  transform: translateY(-5px);
+}

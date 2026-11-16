@@ -687,3 +687,22 @@ import * as THREE from "three";
       }
       initScene();
       requestAnimationFrame(loaderLoop);
+
+      const scrollTopBtn = document.getElementById("nigamScrollTopBtn");
+
+// Show button after scrolling
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "flex";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+});
+
+// Scroll smoothly to top
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
