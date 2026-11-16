@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GRAVITY — Digital Studio by Frontend Ace</title>
+    <link rel="stylesheet" href="style.css">
+    <meta
+      name="description"
+      content="GRAVITY — Independent digital studio. Less noise. More gravity."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="gradient"></div>
+    <div id="webgl"><canvas id="scene"></canvas></div>
+    <div id="loader">
+      <div class="loader-content">
+        <div class="loader-status loader-item" id="loader-status">
+          Calibrating gravity field
+        </div>
+        <div class="progress-track loader-item">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="loader-count loader-item" id="loader-count">000%</div>
+      </div>
+    </div>
+    <header id="header">
+      <a class="wordmark" href="#home">GRAVITY</a>
+      <nav class="nav">
+        <a href="#works">Works</a><a href="#services">Services</a
+        ><a href="#team">Team</a><a href="#story">Story</a
+        ><a href="#contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button
+          class="glass-btn"
+          id="open-drawer"
+          aria-label="Open studio controls"
+        >
+          <svg
+            width="17"
+            height="17"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          >
+            <line x1="4" y1="21" x2="4" y2="14" />
+            <line x1="4" y1="10" x2="4" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12" y2="3" />
+            <line x1="20" y1="21" x2="20" y2="16" />
+            <line x1="20" y1="12" x2="20" y2="3" />
+            <line x1="2" y1="14" x2="6" y2="14" />
+            <line x1="10" y1="8" x2="14" y2="8" />
+            <line x1="18" y1="16" x2="22" y2="16" />
+          </svg>
+        </button>
+        <a class="contact-pill" href="#contact"
+          ><span>Contact us</span
+          ><span class="orb"
+            ><svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" /></svg></span
+        ></a>
+      </div>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-row interactive">
+          <div class="hero-left">
+            <div class="eyebrow">[ Digital studio ]</div>
+            <h1>Less noise. More gravity.</h1>
+          </div>
+          <div class="hero-right">
+            <p>
+              We design digital experiences that remove distraction and amplify
+              presence.
+            </p>
+            <div class="credit">© 2026 — Independent digital agency</div>
+            <div class="scrollcue">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M12 5v14m-7-7 7 7 7-7" />
+                </svg>Scroll
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-two" id="works">
+        <div class="two-grid interactive">
+          <div>
+            <div class="mono-label reveal">[ 02 — Physics ]</div>
+            <h2 class="section-heading reveal" style="transition-delay: 0.1s">
+              When structure<br />lets go.
+            </h2>
+            <p class="body-copy reveal" style="transition-delay: 0.2s">
+              Keep scrolling and the field surrenders to gravity. Every sphere
+              obeys real simulated physics — mass, momentum, restitution —
+              tumbling down and bouncing off the floor until the energy finally
+              settles.
+            </p>
+          </div>
+          <div class="stats reveal" style="transition-delay: 0.25s">
+            <div class="stat-card">
+              <div class="stat-inner">
+                <div class="stat-meta">
+                  <span class="index">01</span
+                  ><span>Solver · Verlet · 4 sub-steps</span><i class="dot"></i>
+                </div>
+                <div class="stat-value">Stable stacking at 60fps</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-inner">
+                <div class="stat-meta">
+                  <span class="index">02</span><span>Restitution</span
+                  ><i class="dot"></i>
+                </div>
+                <div class="stat-value">0.65 — bouncy</div>
+                <div class="stat-desc">Energy lost on every contact</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-inner">
+                <div class="stat-meta">
+                  <span class="index">03</span><span>Bodies</span
+                  ><i class="dot"></i>
+                </div>
+                <div class="stat-value">Real-time GPU</div>
+                <div class="stat-desc">No pre-baked animation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-three" id="services">
+        <div class="interactive">
+          <div class="mono-label reveal">[ 03 — Form ]</div>
+          <h2 class="section-heading reveal" style="transition-delay: 0.1s">
+            Chaos, then form.
+          </h2>
+        </div>
+        <div class="shape-bottom interactive">
+          <p class="body-copy reveal" style="transition-delay: 0.15s">
+            Out of free-fall, the field reassembles — every bubble finding its
+            place in a single shape. Move your cursor through it and watch the
+            order ripple, scatter, and recover.
+          </p>
+          <div class="hint-pill reveal" style="transition-delay: 0.28s">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 2v6m0 0a3 3 0 1 0-3-3m3 3a3 3 0 1 1 3-3" /></svg>
+              <span>Swipe through it</span>
+          </div>
+        </div>
+      </section>
+      <section class="section-four" id="team">
+        <div class="release-inner interactive">
+          <div class="mono-label reveal">[ 04 — Release ]</div>
+          <h2 class="section-heading reveal" style="transition-delay: 0.12s">
+            And then,<br />weightless.
+          </h2>
+          <p class="body-copy reveal" style="transition-delay: 0.24s">
+            The whole field lifts off the screen and rushes past you — every
+            sphere accelerating into the lens until nothing remains but light.
+            Less noise.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer id="contact">
+      <div class="glow one"></div>
+      <div class="glow two"></div>
+      <div class="marquee">
+        <div class="marquee-track">
+          <div class="marquee-set">
+            <span class="marquee-word">Less noise</span
+            ><i class="marquee-dot"></i
+            ><span class="marquee-word">More gravity</span
+            ><i class="marquee-dot"></i
+            ><span class="marquee-word">Design with weight</span
+            ><i class="marquee-dot"></i
+            ><span class="marquee-word">Let's build</span
+            ><i class="marquee-dot"></i>
+          </div>
+          <div class="marquee-set" aria-hidden="true">
+            <span class="marquee-word">Less noise</span
+            ><i class="marquee-dot"></i
+            ><span class="marquee-word">More gravity</span
+            ><i class="marquee-dot"></i
+            ><span class="marquee-word">Design with weight</span
+            ><i class="marquee-dot"></i
+            ><span class="marquee-word">Let's build</span
+            ><i class="marquee-dot"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer-body">
+        <div class="footer-grid">
+          <div class="footer-cta reveal">
+            <div class="footer-kicker">[ Let's collaborate ]</div>
+            <h2>Have an idea<br />with real weight?</h2>
+            <a class="email-pill" href="mailto:hello@gravity.studio"
+              ><span>hello@gravity.studio</span
+              ><span class="orb"
+                ><svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></span
+            ></a>
+          </div>
+          <div class="link-columns">
+            <div class="link-col reveal">
+              <h3>Studio</h3>
+              <a href="#works"
+                >Works
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="#services"
+                >Services
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="#services"
+                >Process
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="#contact"
+                >Careers
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg>
+                </a>
+            </div>
+            <div class="link-col reveal" style="transition-delay: 0.08s">
+              <h3>Company</h3>
+              <a href="#story"
+                >Story
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="#team"
+                >Team
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="#story"
+                >Journal
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="#contact"
+                >Contact
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg>
+              </a>
+            </div>
+            <div class="link-col reveal" style="transition-delay: 0.16s">
+              <h3>Social</h3>
+              <a href="https://twitter.com/"
+                >Twitter
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="https://instagram.com/"
+                >Instagram
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="https://linkedin.com/"
+                >LinkedIn
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg></a
+              ><a href="https://dribbble.com/"
+                >Dribbble
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M7 17 17 7M7 7h10v10" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <div class="bottom-brand">
+            <strong>GRAVITY</strong><i class="blue-dot"></i
+            ><small>© 2026 Digital Studio — All rights reserved.</small>
+          </div>
+          <div class="socials">
+            <a href="https://twitter.com/" aria-label="Twitter"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.6 22H2.4l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"
+                /></svg></a
+            ><a href="https://instagram.com/" aria-label="Instagram"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="18" cy="6" r="1" fill="currentColor" /></svg></a
+            ><a href="https://linkedin.com/" aria-label="LinkedIn"
+              ><svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M5.2 3a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.3 9h3.8v12H3.3V9Zm6.2
+                   0h3.6v1.6h.1c.5-.9 1.7-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.7V21h-3.8v-5.8c0-1.4
+                    0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9.5V9Z"/></svg></a>
+          </div>
+        </div>
+    </footer>
+    <div id="scrim"></div>
+    <aside id="drawer" aria-hidden="true">
+      <div class="drawer-head">
+        <div class="drawer-title">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          >
+            <path
+              d="M4 21v-7m0-4V3m8 18v-9m0-4V3m8 18v-5m0-4V3M2 14h4m4-6h4m4 8h4"/>
+              </svg >
+              Studio Controls
+        </div>
+        <button class="close-btn" id="close-drawer" aria-label="Close controls">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="m18 6-12 12M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <p class="drawer-note">
+        Set the hero sphere palette. As you scroll, the scene morphs to
+        volt-lime, then rose-pink as the heart assembles.
+      </p>
+      <div class="palette-heading">
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <path
+            d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3Z"
+          />
+          </svg>Hero Palette Shaders
+      </div>
+      <div class="palette-list" id="palette-list">
+        <button class="palette-option selected" data-id="roseGold">
+          <div class="palette-top">
+            Royal Blue &amp; Pearl
+            <i class="swatch" style="background: #2f69ff"></i>
+          </div>
+          <p>
+            Hyper-distinct cobalt spheres floating in soft white-slate
+            gradients.
+          </p>
+        </button>
+        <button class="palette-option" data-id="pinkBlush">
+          <div class="palette-top">
+            Rose Blush &amp; Crème
+            <i class="swatch" style="background: #ffa6b3"></i>
+          </div>
+          <p>
+            Sweet candy pinks and juicy strawberry accents in a pearl studio.
+          </p>
+        </button>
+        <button class="palette-option" data-id="voltLime">
+          <div class="palette-top">
+            Volt Lime &amp; Slate
+            <i class="swatch" style="background: #e1fc03"></i>
+          </div>
+          <p>Electric neon volt-lime against a clean white-slate horizon.</p>
+        </button>
+        <button class="palette-option" data-id="arcticBlue">
+          <div class="palette-top">
+            Arctic Sky &amp; Crystal
+            <i class="swatch" style="background: #96e5ff"></i>
+          </div>
+          <p>Cool arctic crystal blues with a translucent glass sheen.</p>
+        </button>
+      </div>
+      <div class="drawer-bottom">
+        <div class="engine-note">
+          RENDER ENGINE / THREE.JS WEBGL<br />DYNAMICS SOLVER / 3D COLLISION
+          VERLET
+        </div>
+        <button class="reset-btn" id="reset-theme">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+          >
+            <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+            <path d="M3 3v5h5" /></svg>Reset Defaults
+        </button>
+      </div>
+    </aside>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
